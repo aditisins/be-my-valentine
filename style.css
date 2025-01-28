@@ -1,0 +1,129 @@
+body {
+    background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+img {
+    border-radius: 10px;
+    height: 300px;
+    object-fit: cover;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #bd1e59;
+    margin: 20px auto;
+    font-style: italic;
+    text-align: center;
+    word-wrap: break-word;
+    max-width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (max-width: 768px) {
+    h2 {
+        margin: 0 auto;
+        font-size: 2rem;
+        max-width: 80%;
+    }
+}
+
+#responseButtons {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    position: relative;
+}
+
+@media (max-width: 768px) {
+    #responseButtons {
+      flex-direction: column; 
+      gap: 10px;
+    }}
+
+#yesButton {
+    background-color: #3dcc91;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease; 
+}
+
+#yesButton:hover {
+    background-color: #2ab876;
+    transform: scale(1.1);
+}
+
+#noButton {
+    position: absolute;
+    background-color: #ff5a5f;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+}
+
+#noButton:disabled {
+    pointer-events: none; 
+    cursor: not-allowed; 
+    opacity: 0.7; 
+}
+
+#noButton:hover {
+    background-color: #d44a4e;
+    transform: scale(1.05);
+}
+
+.bounce2 {
+    animation: bounce2 2s ease infinite;
+}
+
+p {
+    font-family: Arial, sans-serif;
+    font-size: 20px;
+    color: #bd1e59;
+    text-align: center;
+    margin-top: 10px;
+}
+
+img[src="./images/baddie.jpg"] {
+    position: absolute;
+    border: 3px solid #ff5a5f;
+    border-radius: 50%;
+    will-change: transform;
+}
+
+@keyframes bounce2 {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
