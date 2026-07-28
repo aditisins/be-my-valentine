@@ -3,41 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valentine's Day</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
-  <style>
-    .gradient-background {
-      background: linear-gradient(180deg, rgba(255, 208, 229, 1) 0%, rgba(255, 232, 242, 1) 36%, rgba(255, 255, 255, 1) 100%);
-    }
-    .bounce2 {
-      animation: bounce2 2s ease infinite;
-    }
-    @keyframes bounce2 {
-      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-      40% { transform: translateY(-20px); }
-      60% { transform: translateY(-10px); }
-    }
-  </style>
+  <meta name="description" content="A playful little Valentine question made with love.">
+  <meta name="theme-color" content="#f8cbd3">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="A very important Valentine question">
+  <meta property="og:description" content="Someone has a tiny but very important question for you.">
+  <title>A Very Important Valentine Question</title>
+  <link rel="icon" href="./images/baddie.jpg">
+  <link rel="stylesheet" href="./style.css">
 </head>
-<body class="gradient-background">
-  <div class="flex items-center justify-center h-screen">
-    <div class="flex flex-col items-center p-4 text-center">
-      <img id="imageDisplay" src="./images/image1.gif" alt="Cute dancing duck with hearts" class="rounded-md h-[300px]" style="object-fit: cover;" />
-      <h2 id="valentineQuestion" class="text-4xl font-bold italic text-[#bd1e59] my-4 text-center">Will you be my Valentine?</h2>
-      <div class="flex gap-4 pt-[20px] items-center" id="responseButtons">
-        <button id="yesButton"
-          class="bounce2 inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium hover:bg-green-400 min-h-12 min-w-[75px] px-4 py-2 bg-green-500 text-white transition">
-          Yes
-        </button>
-        <button id="noButton"
-          class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-[20px] font-medium hover:bg-red-700 h-12 min-w-[75px] w-auto px-4 py-2 bg-red-500 text-white">
-          No
-        </button>
-      </div>
-    </div>
+<body>
+  <div class="background-hearts" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
   </div>
 
-  <script type="module" src="./script.js"></script>
+  <main class="site-shell">
+    <article class="valentine-card" aria-labelledby="valentineQuestion">
+      <p class="postmark" aria-hidden="true"><strong>14</strong><span>FEB</span></p>
+
+      <section id="questionView">
+        <div class="art-frame">
+          <span class="tape tape-left" aria-hidden="true"></span>
+          <span class="tape tape-right" aria-hidden="true"></span>
+          <img id="imageDisplay" src="./images/image1.gif" alt="A happy duck surrounded by hearts" width="512" height="512">
+        </div>
+
+        <div class="question-copy">
+          <h1 id="valentineQuestion">Will you be my Valentine?</h1>
+          <p class="status-message" id="statusMessage" role="status" aria-live="polite"></p>
+        </div>
+
+        <div class="response-stage" id="responseStage">
+          <button class="button button-yes" id="yesButton" type="button">Yes</button>
+          <button class="button button-no" id="noButton" type="button">No</button>
+        </div>
+
+      </section>
+
+      <section class="result-view" id="resultView" aria-live="polite" hidden>
+        <div class="result-art">
+          <img class="result-image" id="resultImage" src="./images/image7.gif" alt="Two ducks celebrating together" width="500" height="500">
+          <img class="result-sticker" id="resultSticker" src="./images/baddie.jpg" alt="A glamorous duck" width="200" height="220">
+        </div>
+        <h1 id="resultTitle" tabindex="-1">It's a date.</h1>
+        <div class="result-actions">
+          <button class="button button-yes" id="shareButton" type="button">Share</button>
+          <button class="button button-secondary" id="replayButton" type="button">Replay</button>
+        </div>
+        <p class="share-status" id="shareStatus" role="status" aria-live="polite"></p>
+      </section>
+    </article>
+
+  </main>
+
+  <div class="confetti-layer" id="confettiLayer" aria-hidden="true"></div>
+  <script src="./config.js" defer></script>
+  <script src="./script.js" defer></script>
 </body>
 </html>
