@@ -17,11 +17,12 @@ Click [Use this template](https://github.com/new?template_name=be-my-valentine&t
 
 ```
 .
-├── index.html        
-├── script.js        
-├── style.css         
-├── images/           
-└── sounds/           
+|-- config.js
+|-- index.html
+|-- script.js
+|-- style.css
+|-- images/
+`-- sounds/        
 ```
 
 ## Customize It
